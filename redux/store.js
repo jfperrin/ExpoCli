@@ -1,12 +1,16 @@
-import {createStore, combineReducers} from 'redux';
+import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import placeReducer from './reducers/place';
+import usersReducer from './reducers/users';
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-  places: placeReducer
+  places: placeReducer,
+  users: usersReducer,
 });
 
 const configureStore = () => {
-  return createStore(rootReducer);
+  const middleware = compose(applyMiddleware(thunk));
+  return createStore(rootReducer, {}, middleware);
 };
 
 export default configureStore;

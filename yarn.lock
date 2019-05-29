@@ -4998,6 +4998,11 @@ redux-axios-middleware@^4.0.0:
   resolved "https://nexus.packages.artprice.io/repository/npm/redux-axios-middleware/-/redux-axios-middleware-4.0.0.tgz#81951c3d9adce6f83ef892fd1568571cebe4a336"
   integrity sha1-gZUcPZrc5vg++JL9FWhXHOvkozY=
 
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "https://nexus.packages.artprice.io/repository/npm/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
+
 redux@^4.0.1:
   version "4.0.1"
   resolved "https://nexus.packages.artprice.io/repository/npm/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"

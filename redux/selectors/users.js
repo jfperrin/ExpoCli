@@ -1,0 +1,1 @@
+export const list = state => state.users.items;
