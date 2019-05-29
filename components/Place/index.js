@@ -33,7 +33,7 @@ class Main extends Component {
                 data={this.props.places}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={info => console.log('info', info) || (
-                  <ListItem placeName={info.item.value} />
+                  <ListItem placeName={info.item.value}/>
                 )}
       />
     )
