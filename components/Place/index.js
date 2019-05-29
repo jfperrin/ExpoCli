@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {View, TextInput, Button, FlatList} from 'react-native';
+import {ScrollView, View, TextInput, Button, FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import ListItem from './ListItem';
 import {addPlace} from '../../redux/actions/place';
 import styles from './styles';
 
 class Main extends Component {
+  static navigationOptions = {
+    title: 'Notifier',
+  };
+
   constructor(props) {
     super(props);
 
@@ -41,15 +45,15 @@ class Main extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.scrollViewContainer}>
+        <View style={styles.listContainer}>
+          {this.placesOutput()}
+        </View>
         <View style={styles.inputContainer}>
           <TextInput placeholder="Search Places" style={styles.placeInput} value={this.state.placeName} onChangeText={this.placeNameChangeHandler}/>
           <Button title='Add' style={styles.placeButton} onPress={this.placeSubmitHandler}/>
         </View>
-        <View style={styles.listContainer}>
-          {this.placesOutput()}
-        </View>
-      </View>
+      </ScrollView>
     );
   }
 }
