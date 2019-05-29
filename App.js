@@ -4,7 +4,6 @@ import configureStore from './redux/store';
 import Main from './components/Main'
 
 const store = configureStore();
-console.log('Starting');
 
 class App extends React.Component {
   render() {
