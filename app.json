@@ -1,15 +1,13 @@
 {
   "expo": {
-    "name": "ExpoCli",
-    "slug": "expoCli",
+    "name": "NotifierApp",
+    "slug": "notifier",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ],
-    "android": {
-      "package": "com.artprice.notifier"
-    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +23,11 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "at.perrin.notifier",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "at.perrin.notifier"
     }
   }
 }
