@@ -36,7 +36,7 @@ class Main extends Component {
       <FlatList style={styles.listContainer}
                 data={this.props.places}
                 keyExtractor={(item, index) => index.toString()}
-                renderItem={info => console.log('info', info) || (
+                renderItem={info => (
                   <ListItem placeName={info.item.value}/>
                 )}
       />
