@@ -5,6 +5,8 @@ Sample mobile application using react-native, expo and redux
 ## Resources
 
 * https://docs.expo.io
+* https://apiko.com/blog/react-native-push-notifications/
+* https://github.com/sunnylqm/react-native-storage
 * https://facebook.github.io/react-native/docs/getting-started
 * https://jsonplaceholder.typicode.com/ (api Json)
 
