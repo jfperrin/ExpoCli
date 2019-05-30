@@ -34,7 +34,7 @@ UsersStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-contacts${focused ? '' : '-outline'}`
+          ? 'ios-contacts'
           : 'md-contacts'
       }
     />
