@@ -11,16 +11,6 @@ export const userList = (users) => ({
 export function getUsersList() {
   return async (dispatch) => {
     const list = await fetchUsersList();
-
-    global.storage.save({
-      key: 'usersList', // Note: Do not use underscore("_") in key!
-      data: list,
-
-      // if expires not specified, the defaultExpires will be applied instead.
-      // if set to null, then it will never expire.
-      expires: 1000 * 3600
-    });
-
     dispatch(userList(list));
   }
 };

@@ -1,39 +1,15 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import configureStore from './redux/store';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { PersistGate } from 'redux-persist/integration/react'
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import Main from './components/Main'
-import Storage from 'react-native-storage';
-import { AsyncStorage } from "react-native";
 
-const storage = new Storage({
-  // maximum capacity, default 1000
-  size: 1000,
+const {store, persistor} = configureStore();
 
-  // Use AsyncStorage for RN apps, or window.localStorage for web apps.
-  // If storageBackend is not set, data will be lost after reload.
-  storageBackend: AsyncStorage, // for web: window.localStorage
+console.log(store, persistor);
 
-  // expire time, default: 1 day (1000 * 3600 * 24 milliseconds).
-  // can be null, which means never expire.
-  defaultExpires: 1001 * 3600 * 24,
-
-  // cache data in the memory. default is true.
-  enableCache: true,
-
-  // if data was not found in storage or expired data was found,
-  // the corresponding sync method will be invoked returning
-  // the latest data.
-  sync: {
-    // we'll talk about the details later.
-  }
-});
-
-global.storage = storage;
-
-const store = configureStore();
-
-const AppContainer = createAppContainer(createSwitchNavigator({  Main: Main}));
+const AppContainer = createAppContainer(createSwitchNavigator({Main: Main}));
 
 class App extends React.Component {
 
@@ -41,7 +17,9 @@ class App extends React.Component {
 
     return (
       <Provider store={store}>
-        <AppContainer />
+        <PersistGate loading={null} persistor={persistor}>
+          <AppContainer/>
+        </PersistGate>
       </Provider>
     );
   }

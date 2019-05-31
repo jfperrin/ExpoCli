@@ -9,6 +9,7 @@ Sample mobile application using react-native, expo and redux
 * https://github.com/sunnylqm/react-native-storage
 * https://facebook.github.io/react-native/docs/getting-started
 * https://jsonplaceholder.typicode.com/ (api Json)
+* https://facebook.github.io/react-native/docs/text.html
 
 ## Commands
 
