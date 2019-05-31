@@ -8,6 +8,13 @@ import styles from './styles';
 class Main extends Component {
   static navigationOptions = {
     title: 'Places',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
   };
 
   constructor(props) {
@@ -32,18 +39,18 @@ class Main extends Component {
   };
 
   placesOutput = () => {
-    return (
-      <FlatList style={styles.listContainer}
-                data={this.props.places}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={info => (
-                  <ListItem placeName={info.item.value}/>
-                )}
-      />
-    )
+    return (<FlatList style={styles.listContainer}
+                      data={this.props.places}
+                      keyExtractor={(item, index) => index.toString()}
+                      renderItem={info => (
+                        <ListItem placeName={info.item.value}/>
+                      )}
+    />)
   };
 
   render() {
+    const {navigation} = this.props;
+
     return (
       <ScrollView style={styles.scrollViewContainer}>
         <View style={styles.listContainer}>
@@ -52,6 +59,12 @@ class Main extends Component {
         <View style={styles.inputContainer}>
           <TextInput placeholder="Search Places" style={styles.placeInput} value={this.state.placeName} onChangeText={this.placeNameChangeHandler}/>
           <Button title='Add' style={styles.placeButton} onPress={this.placeSubmitHandler}/>
+        </View>
+        <View style={styles.inputContainer}>
+          <Button
+            title="Go to Details"
+            onPress={() => navigation.navigate('UsersStack')}
+          />
         </View>
       </ScrollView>
     );

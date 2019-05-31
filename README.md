@@ -5,7 +5,7 @@ Sample mobile application using react-native, expo and redux
 ## Resources
 
 * https://docs.expo.io
-* https://apiko.com/blog/react-native-push-notifications/
+* https://github.com/rt2zz/redux-persist
 * https://github.com/sunnylqm/react-native-storage
 * https://facebook.github.io/react-native/docs/getting-started
 * https://jsonplaceholder.typicode.com/ (api Json)
@@ -31,3 +31,9 @@ expo build:ios
 ## Tools
 
 You can develop an entire application [here](https://snack.expo.io/) on snack.expo.io
+
+## ToDo
+
+#### Notifications
+* https://docs.expo.io/versions/latest/guides/push-notifications/
+* https://apiko.com/blog/react-native-push-notifications/
