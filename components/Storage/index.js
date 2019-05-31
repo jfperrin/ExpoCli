@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 
 class Storage extends Component {
+  static navigationOptions = {
+    title: 'Storage',
+  };
+
   constructor(props) {
     super(props);
 

@@ -6,7 +6,7 @@ import {list as listSelector} from "../../redux/selectors/users";
 
 class Users extends Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'Users',
   };
 
   componentDidMount() {
