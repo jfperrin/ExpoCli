@@ -11,7 +11,6 @@ const rootReducer = combineReducers({
 });
 
 export default () => {
-  console.log('redux init')
   const persistConfig = {
     key: "root",
     storage: AsyncStorage,
