@@ -4,6 +4,25 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import Place from './Place';
 import TabBarIcon from "./ui/TabBarIcon";
 import Users from "./Users";
+import Storage from "./Storage";
+
+const StorageStack = createStackNavigator({
+  Home: Storage,
+});
+
+StorageStack.navigationOptions = {
+  tabBarLabel: 'Storage',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? 'ios-appstore'
+          : 'md-appstore'
+      }
+    />
+  ),
+};
 
 const PlaceStack = createStackNavigator({
   Home: Place,
@@ -44,4 +63,5 @@ UsersStack.navigationOptions = {
 export default createBottomTabNavigator({
   PlaceStack,
   UsersStack,
+  StorageStack,
 });
